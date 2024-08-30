@@ -1,0 +1,118 @@
+{
+  "name": "annotations",
+  "fields": [
+    {
+      "name": "date",
+      "type": "int32",
+      "facet": true,
+      "optional": false,
+      "index": true,
+      "sort": true,
+      "infix": false,
+      "locale": ""
+    },
+    {
+      "name": "creator_name",
+      "type": "string",
+      "facet": false,
+      "optional": false,
+      "index": false,
+      "sort": false,
+      "infix": false,
+      "locale": ""
+    },
+    {
+      "name": "creator_id",
+      "type": "string",
+      "facet": true,
+      "optional": false,
+      "index": true,
+      "sort": false,
+      "infix": false,
+      "locale": ""
+    },
+    {
+      "name": "text_suffix",
+      "type": "string",
+      "facet": false,
+      "optional": false,
+      "index": true,
+      "sort": false,
+      "infix": false,
+      "locale": ""
+    },
+    {
+      "name": "text_prefix",
+      "type": "string",
+      "facet": false,
+      "optional": false,
+      "index": true,
+      "sort": false,
+      "infix": true,
+      "locale": ""
+    },
+    {
+      "name": "text_exact",
+      "type": "string",
+      "facet": false,
+      "optional": false,
+      "index": true,
+      "sort": false,
+      "infix": true,
+      "locale": ""
+    },
+    {
+      "name": "url",
+      "type": "string",
+      "facet": true,
+      "optional": false,
+      "index": true,
+      "sort": true,
+      "infix": true,
+      "locale": ""
+    },
+    {
+      "name": "tags",
+      "type": "string[]",
+      "facet": true,
+      "optional": false,
+      "index": true,
+      "sort": false,
+      "infix": false,
+      "locale": ""
+    },
+    {
+      "name": "comment",
+      "type": "string",
+      "facet": false,
+      "optional": false,
+      "index": true,
+      "sort": false,
+      "infix": true,
+      "locale": ""
+    },
+    {
+      "name": "embedding",
+      "type": "float[]",
+      "facet": false,
+      "optional": false,
+      "index": true,
+      "sort": false,
+      "infix": false,
+      "locale": "",
+      "embed": {
+        "from": ["text_exact"],
+        "model_config": {
+          "api_key": "{{OPEN_AI_API_KEY}}",
+          "model_name": "openai/text-embedding-3-large"
+        }
+      },
+      "num_dim": 3072,
+      "vec_dist": "cosine"
+    }
+  ],
+  "default_sorting_field": "date",
+  "enable_nested_fields": false,
+  "symbols_to_index": [],
+  "token_separators": []
+}

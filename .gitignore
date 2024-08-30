@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Coverage directory
+coverage/
+
+# Temporary files
+*.tmp
+
+# Optional npm cache & logs
+.npm
+.npmrc
+
+# Optional eslint cache
+.eslintcache
+
+# Bundler/build caches
+.cache/
+.parcel-cache/
+
+# local data
+typesense/data
